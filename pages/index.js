@@ -12,6 +12,7 @@ export default function Home() {
 
   return (
     <main>
+      <h1>Greeting</h1>
       <p>{isGoodby? 'goodby': 'hello'}</p>
 
       <button onClick={handleClick}>Toggle</button>
