@@ -5,12 +5,16 @@ import {useState} from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [greeting, setGreeting] = useState('')
+  const [isGoodby, setGoodby] = useState(false)
+  const handleClick = () => {
+    setGoodby(prevGoodby => !prevGoodby)
+  }
+
   return (
     <main>
-      <p>{greeting}</p>
+      <p>{isGoodby? 'goodby': 'hello'}</p>
 
-      <button onClick={() => setGreeting('Hello World')}>Say hello</button>
+      <button onClick={handleClick}>Toggle</button>
     </main>
   );
 }
