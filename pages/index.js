@@ -6,25 +6,25 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [isGoodby, setGoodby] = useState(false)
-  const [mouseP2, setM] = useState(0)
+
 
   const mosuePosition = useRef(0)
+  const counterP = useRef(null)
 
   const handleClick = () => {
     setGoodby(prevGoodby => !prevGoodby)
   }
 
   const handleMouseMove = event => {
-    mosuePosition.current = event.clientX
-    setM(event.clientX)
+    mosuePosition.current = event.clientX // nem használom amúgy
+    counterP.current.innerHTML = event.clientX
   }
 
   return (
     <main onMouseMove={handleMouseMove}>
       <h1>Greeting</h1>
       <p>{isGoodby? 'goodby': 'hello'}</p>
-      {/*<p>mouse postion: {mosuePosition.current}</p>*/}
-      <p>{mouseP2}</p>
+      <p ref={counterP}></p>
       <button onClick={handleClick}>Toggle</button>
     </main>
   );
