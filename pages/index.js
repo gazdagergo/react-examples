@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import {useRef, useState} from "react";
+import FirstRender from "@/components/FirstRender";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,8 @@ export default function Home() {
       <p>{isGoodby? 'goodby': 'hello'}</p>
       <p ref={counterP}></p>
       <button onClick={handleClick}>Toggle</button>
+
+      <FirstRender />
     </main>
   );
 }
